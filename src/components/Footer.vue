@@ -1,11 +1,15 @@
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+</script>
 
 <template>
     
     
 <div class="footer-container">
     <p class="information">
-      Join our Exclusive Membership 
+      Join our Exclusive Membership!
       Joining our movie site membership is an incredible opportunity for film
       enthusiasts and avid movie lovers. By becoming a member, you gain
       exclusive access to an extensive collection of movies spanning various
@@ -20,7 +24,7 @@
       so join us today!
 
     </p>
-    <button type="button">Sign Up</button>
+    <button @click="$event => router.push('/login')">Sign Up</button>
   </div> 
   
 
@@ -51,6 +55,7 @@
 }
 
 .information {
+    padding-left: 10px;
   padding-bottom: 10px;
 }
 
