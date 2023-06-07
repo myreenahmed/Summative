@@ -55,7 +55,7 @@ const router = useRouter();
 }
 
 .information {
-    padding-left: 10px;
+    padding-left: 20px;
   padding-bottom: 10px;
 }
 
