@@ -1,10 +1,10 @@
 <script setup></script>
 
 <template>
-  <div class="hero-container">
-    <div class="hero-content">
+  <!--<div class="hero-container">  -->
+    <div class="body-content">
       <h1>Welcome to Myreen's Movies</h1>
-      <h2>
+      <p>
         Welcome to our movie marketplace, the ultimate destination for movie
         enthusiasts and collectors. Our website offers an extensive selection of
         movies in various formats, including Blu-ray, DVD, and digital
@@ -18,9 +18,9 @@
         shipping, we ensure a seamless buying experience. Start building your
         personal movie library today with our vast collection of films, and
         enjoy the magic of cinema whenever you want.
-      </h2>
+      </p>
     </div>
-  </div>
+  <!--</div> -->
 </template>
 
 <style scoped>
@@ -29,14 +29,25 @@ img {
   height: 100vh;
 }
 
-.hero-content {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: black;
+.body-content {
+  height: 82vh;
+  
+ 
+
 }
+
+
+h1 { color: #0c0314; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+h2 { color: #0c0314; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+p { color: #0c0314; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+
+a { color: #0c0314; text-decoration: underline; }
+
+
+a:hover { color: #1c1c1c; text-decoration: underline; }
 </style>

@@ -23,14 +23,15 @@ const router = useRouter();
   background-color: #fce5e5;
   border-color: black;
   top: 0px;
-  width: 100%;
+  width: 99%;
 }
 
 button {
-  padding: 8px;
+  padding: 10px;
   background-color:  rgb(228, 31, 152);
   color: white;
   font-weight: bold;
   border-radius: 4px;
+  
 }
 </style>

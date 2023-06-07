@@ -3,9 +3,9 @@
 <template>
     
     
-  <div class="footer-container">
+<div class="footer-container">
     <p class="information">
-    <h1>Join our Exclusive Membership</h1>
+      Join our Exclusive Membership 
       Joining our movie site membership is an incredible opportunity for film
       enthusiasts and avid movie lovers. By becoming a member, you gain
       exclusive access to an extensive collection of movies spanning various
@@ -18,19 +18,36 @@
       will be elevated to new heights, making every viewing experience
       unforgettable. Don't miss out on the chance to enhance your film journey,
       so join us today!
+
     </p>
     <button type="button">Sign Up</button>
-  </div>
+  </div> 
+  
+
+
+
 </template>
 
 <style scoped>
+
 .footer-container {
   padding-top: 20px;
   padding-bottom: 0px;
-  background-color: #fce5e5;
+  background-color: #9b2e71;
   color: white;
   clear: both;
-  height: 200px;
+  
+}
+
+
+.footer-container11 {
+  
+  background-color: #9b2e71;
+  color: white;
+  padding-top: 80px;
+  
+  
+  
 }
 
 .information {
