@@ -1,32 +1,60 @@
 <script setup>
-import { useRouter } from "vue-router";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useStore } from "../store";
+import { auth, firestore } from "../firebase";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  getAuth,
+} from "firebase/auth";
+import { getDoc, doc } from "firebase/firestore";
 
 const router = useRouter();
-let username = ref();
-let password = ref();
-let error = ref();
+const store = useStore();
+const email = ref();
+const password = ref();
+const provider = new GoogleAuthProvider();
+let incorrect = ref();
 
-function login() {
-  if (username.value == "tmdb" && password.value == "movies") {
-    router.push("purchase");
-  } else {
-    error.value = "Incorrect Username or Password";
-    console.log(username.value);
-    console.log(password.value);
+const loginViaEmail = async () => {
+  try {
+    const { user } = await signInWithEmailAndPassword(
+      auth,
+      email.value,
+      password.value
+    );
+    store.user = user;
+    router.push("/purchase");
+  } catch (error) {
+    console.log(error);
+    incorrect.value = `Incorrect e-mail or password`;
   }
-}
+};
+
+const loginViaGoogle = async () => {
+  const provider = new GoogleAuthProvider();
+  const { user } = await signInWithPopup(auth, provider);
+  store.user = user;
+  router.push("/purchase");
+  const firestoreCart = await getDoc(doc(firestore, "carts", user.email));
+  if (firestoreCart.exists()) {
+    const { cart } = firestoreCart.data();
+    store.cart = cart;
+  }
+};
 </script>
 
 <template>
   <div>
     <h1>Sign In</h1>
-    <form class="login-box" @submit.prevent="login()">
+    <form class="login-box" @submit.prevent="loginViaEmail()">
       <input
         class="login-info"
-        type="text"
-        placeholder="Username"
-        v-model="username"
+        type="email"
+        placeholder="Email"
+        v-model="email"
       />
       <input
         class="login-info"
@@ -35,8 +63,20 @@ function login() {
         v-model="password"
       />
       <input class="login-button" type="submit" value="Login" />
+      <p id="error-message">{{ incorrect }}</p>
+      <hr />
     </form>
-    <p id="error-message">{{ error }}</p>
+    <div class="sign-in-buttons">
+      <button
+        class="email-button"
+        type="button"
+        @click="router.push('./register')"
+      >
+        Sign Up
+      </button>
+      <button class="google-button" @click="loginViaGoogle">
+      </button>
+    </div>
   </div>
 </template>
 

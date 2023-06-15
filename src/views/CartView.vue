@@ -2,6 +2,11 @@
 import { useStore } from "../store";
 
 const store = useStore();
+
+const removeItem = (item) => {
+  const index = store.cart.indexOf(item);
+  store.removeFromCart(index);
+};
 </script>
 
 <template>
@@ -12,9 +17,11 @@ const store = useStore();
         alt="Movie poster"
       />
       <h1>{{ item.title }}</h1>
+      <button @click="removeItem(item)">Remove</button>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 img {
@@ -41,5 +48,17 @@ h1 {
   transform: translate(-50%, -50%);
   font-size: 150%;
   color: rgb(228, 31, 152);
+}
+
+button {
+  margin: 4px;
+  position: absolute;
+  background-color: blueviolet;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  right: 0;
+  bottom: 0;
 }
 </style>

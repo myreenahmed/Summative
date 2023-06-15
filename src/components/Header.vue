@@ -7,7 +7,10 @@ const router = useRouter();
 <template>
   <div class="header-container">
     <h1>Myreen's Movies</h1>
-    <button @click="router.push('/login')">Login</button>
+    <div class="account-buttons">
+      <button @click="router.push('/login')">Login</button>
+      <button @click="router.push('/register')">Sign Up</button>
+    </div>
   </div>
 </template>
 

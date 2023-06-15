@@ -20,7 +20,7 @@ const router = useRouter();
       making every viewing experience unforgettable. Don't miss out on the
       chance to enhance your film journey, so join us today!
     </p>
-    <button @click="($event) => router.push('/login')">Sign Up</button>
+    <button type="button">Sign Up</button>
   </div>
 </template>
 
