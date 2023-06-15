@@ -28,10 +28,9 @@ const router = useRouter();
 
 button {
   padding: 10px;
-  background-color:  rgb(228, 31, 152);
+  background-color: rgb(228, 31, 152);
   color: white;
   font-weight: bold;
   border-radius: 4px;
-  
 }
 </style>

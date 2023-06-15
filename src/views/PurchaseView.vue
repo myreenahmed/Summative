@@ -66,7 +66,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   font-weight: bold;
-  background-color:  rgb(228, 31, 152);
+  background-color: rgb(228, 31, 152);
   color: white;
   border-radius: 4px;
 }

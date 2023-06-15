@@ -21,7 +21,7 @@ img {
   width: 25%;
   margin: 0.5rem;
   border-radius: 7px;
-  border-color:  rgb(228, 31, 152);
+  border-color: rgb(228, 31, 152);
 }
 .movie-container {
   position: relative;
