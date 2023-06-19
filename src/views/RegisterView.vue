@@ -21,12 +21,13 @@ const registerViaEmail = async () => {
     alert("Passwords do not match.");
     return;
   }
-
+  alert("hi");
   const { user } = await createUserWithEmailAndPassword(
     auth,
     email.value,
     password.value
   );
+  
   store.user = user;
   router.push("./purchase");
 };
@@ -55,12 +56,12 @@ const registerViaGoogle = async () => {
         type="password"
         placeholder="Confirm Password"
       />
-      <input class="register-button" type="submit" value="Register" />
+      <input class="register-button" type="submit" value="Register" @click="registerViaEmail()"/>
       <hr />
     </form>
     <button class="google-button" @click="registerViaGoogle()">
-        <img src="../assets/Google__G__Logo.svg.png" />
-      </button>
+      Register with Google
+    </button>
   </div>
 </template>
 
