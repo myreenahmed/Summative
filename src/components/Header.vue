@@ -35,5 +35,6 @@ button {
   color: white;
   font-weight: bold;
   border-radius: 4px;
+  margin: 5px;
 }
 </style>

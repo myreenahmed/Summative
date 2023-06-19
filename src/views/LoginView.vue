@@ -72,10 +72,9 @@ const loginViaGoogle = async () => {
         type="button"
         @click="router.push('./register')"
       >
-        Sign Up
+        Register
       </button>
-      <button class="google-button" @click="loginViaGoogle">
-      </button>
+      <button class="google-button" @click="loginViaGoogle">Login with Google</button>
     </div>
   </div>
 </template>
@@ -105,8 +104,16 @@ const loginViaGoogle = async () => {
   margin: 10px;
   padding: 3px;
   font-weight: bold;
+  color: palevioletred;
+}
+.google-button {
+    margin-left: 5px;
+    color: palevioletred;
 }
 
+.email-button {
+    color: palevioletred;
+}
 h1 {
   margin: 0;
   position: absolute;
@@ -114,6 +121,6 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #fce5e5;
+  color: palevioletred;
 }
 </style>

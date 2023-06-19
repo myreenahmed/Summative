@@ -12,24 +12,23 @@ import { getDoc, doc } from "@firebase/firestore";
 
 const store = useStore();
 const router = useRouter();
-const email = ref();
-const password = ref();
-const confirmPassword = ref();
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
 
 const registerViaEmail = async () => {
   if (password.value != confirmPassword.value) {
     alert("Passwords do not match.");
     return;
   }
-  alert("hi");
+
   const { user } = await createUserWithEmailAndPassword(
     auth,
     email.value,
     password.value
   );
-  
   store.user = user;
-  router.push("./purchase");
+  router.push("/purchase");
 };
 
 const registerViaGoogle = async () => {
@@ -56,11 +55,10 @@ const registerViaGoogle = async () => {
         type="password"
         placeholder="Confirm Password"
       />
-      <input class="register-button" type="submit" value="Register" @click="registerViaEmail()"/>
+      <input class="register-button" type="submit" value="Register" />
       <hr />
     </form>
-    <button class="google-button" @click="registerViaGoogle()">
-      Register with Google
+    <button class="google-button" @click="registerViaGoogle()">Register with Google
     </button>
   </div>
 </template>
@@ -89,6 +87,7 @@ input {
   border-radius: 5px;
   margin: 10px;
   padding: 3px;
+  color: palevioletred;
   font-weight: bold;
 }
 
@@ -104,10 +103,6 @@ button {
   font-weight: bold;
 }
 
-img {
-  width: 25px;
-}
-
 h1 {
   text-align: center;
   position: absolute;
@@ -115,14 +110,17 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  color: palevioletred;
 }
 
 .google-button {
   position: absolute;
   top: 70%;
   left: 50%;
+  color: palevioletred;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100px;
+  height: 50px
 }
 </style>

@@ -50,7 +50,7 @@ const getData = async (url, options, page) => {
             (page = 1)
         "
       >
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search"></i> Search
       </button>
       <select v-model="genre">
         <option value="28">Action</option>
@@ -81,7 +81,7 @@ const getData = async (url, options, page) => {
             (page = 1)
         "
       >
-        <i class="fas fa-filter"></i>
+        <i class="fas fa-filter"></i> Go
       </button>
     </header>
     <div v-if="movieData" class="tiles">
@@ -113,7 +113,7 @@ const getData = async (url, options, page) => {
             )
         "
       >
-        <i class="fas fa-angle-left"></i>
+        <i class="fas fa-angle-left"></i> Previous
       </button>
       <p>{{ `Page ${page} of ${totalPages}` }}</p>
       <button
@@ -130,7 +130,7 @@ const getData = async (url, options, page) => {
             )
         "
       >
-        <i class="fas fa-angle-right"></i>
+        <i class="fas fa-angle-right"></i> Next
       </button>
     </div>
   </div>
@@ -179,7 +179,7 @@ header button {
   padding-left: 15px;
   padding-right: 15px;
   font-weight: bold;
-  background-color: orange;
+  background-color: palevioletred;
   color: white;
   border-radius: 4px;
 }
@@ -195,7 +195,7 @@ header select {
   padding-left: 15px;
   padding-right: 15px;
   font-weight: bold;
-  background-color: orange;
+  background-color: palevioletred;
   color: white;
   border-radius: 4px;
 }

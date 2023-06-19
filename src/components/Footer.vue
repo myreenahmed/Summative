@@ -20,7 +20,7 @@ const router = useRouter();
       making every viewing experience unforgettable. Don't miss out on the
       chance to enhance your film journey, so join us today!
     </p>
-    <button type="button">Sign Up</button>
+    <button type="button" @click="router.push('/register')">Sign Up</button>
   </div>
 </template>
 
